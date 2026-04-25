@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visionary Studios</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Visionary Studios Logo.jpeg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+
+<!-- ================= Navigation Bar ================= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      VISIONARY.<span>STUDIOS.CO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Shoot</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+<!-- ================= Navigation Bar End ================= -->
+
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#work" onclick="closeMenu()">Work</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Book a Shoot</a></li>
+    </ul>
+  </div>
+
+<!-- ================= Hero Section ================= -->
+  <section class="hero" id="hero">
+
+    <!-- Background video -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <!-- Replace src with your actual video file -->
+      <source src="visionarystudioshero.mp4" type="video/mp4"/>
+    </video>
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <p class="hero-label">Toronto — Wedding · Automotive · Events</p>
+      <h1 class="hero-title">
+        We Don't<br/>Just Shoot.<br/><span>We Create.</span>
+      </h1>
+      <p class="hero-sub">Cinematic photography & videography for brands and moments that matter.</p>
+      <div class="hero-buttons">
+        <a href="#work" class="btn-primary">View Our Work</a>
+        <a href="#contact" class="btn-secondary">Book a Shoot</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+  </section>
+<!-- ================= End Hero Section ================= -->
+
+<!-- ================= Portfolio Section ================= -->
+<section class="portfolio" id="work">
+  <div class="section-header">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title">Built Different.<br/><span>Shot Different.</span></h2>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="weddings">Weddings</button>
+    <button class="filter-btn" data-filter="cars">Automotive</button>
+    <button class="filter-btn" data-filter="events">Events</button>
+    <button class="filter-btn" data-filter="business">Business</button>
+  </div>
+
+  <!-- Grid -->
+  <div class="portfolio-grid" id="portfolioGrid">
+
+    <div class="grid-item tall" data-category="weddings">
+      <img src="Visionary Studios Logo.jpeg" alt="Wedding shoot"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Weddings</span>
+        <p class="grid-title">Golden Hour Ceremony</p>
+      </div>
+    </div>
+
+    <div class="grid-item wide" data-category="cars">
+      <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="Car shoot"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Automotive</span>
+        <p class="grid-title">Midnight Drive</p>
+      </div>
+    </div>
+
+    <div class="grid-item" data-category="events">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Event shoot"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Events</span>
+        <p class="grid-title">Grand Opening</p>
+      </div>
+    </div>
+
+    <div class="grid-item video-card" data-category="business">
+      <video autoplay muted loop playsinline>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
+      </video>
+      <div class="grid-overlay">
+        <span class="grid-tag video-tag">▶ Video · Business</span>
+        <p class="grid-title">Brand Campaign</p>
+      </div>
+    </div>
+
+    <div class="grid-item tall" data-category="cars">
+      <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80" alt="Car detail"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Automotive</span>
+        <p class="grid-title">Detail Shots</p>
+      </div>
+    </div>
+
+    <div class="grid-item" data-category="weddings">
+      <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=80" alt="Wedding portrait"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Weddings</span>
+        <p class="grid-title">First Look</p>
+      </div>
+    </div>
+
+    <div class="grid-item wide" data-category="events">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Event"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Events</span>
+        <p class="grid-title">Corporate Summit</p>
+      </div>
+    </div>
+
+    <div class="grid-item" data-category="business">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Business content"/>
+      <div class="grid-overlay">
+        <span class="grid-tag">Business</span>
+        <p class="grid-title">Executive Portraits</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ================= End Portfolio Section ================= -->
+
+<!-- ================= About Section ================= -->
+<section class="about" id="about">
+  <div class="about-inner">
+
+    <!-- Left: Image -->
+    <div class="about-image-wrap">
+      <div class="about-image-frame">
+        <img
+          src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=900&q=80"
+          alt="Behind the scenes — photographer at work"
+        />
+
+        <!-- Floating stats -->
+        <div class="about-stat top-stat">
+          <span class="stat-number">7+</span>
+          <span class="stat-label">Years Shooting</span>
+        </div>
+
+        <div class="about-stat bottom-stat">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+      </div>
+
+      <div class="about-border-accent"></div>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="about-content">
+      <p class="section-label">About Us</p>
+
+      <h2 class="about-title">
+        We See The Shot<br/><span>Before We Take It.</span>
+      </h2>
+
+      <p class="about-body">
+        Visionary Studios is a Toronto-based photography and videography team focused on
+        capturing moments with intention. From weddings to automotive shoots, every project
+        is approached with a cinematic mindset.
+      </p>
+
+      <p class="about-body">
+        We don’t just capture content — we build visuals that represent your brand,
+        your story, and your identity.
+      </p>
+
+      <!-- Traits -->
+      <div class="about-traits">
+        <div class="trait"><span class="trait-dot"></span>Cinematic colour grading</div>
+        <div class="trait"><span class="trait-dot"></span>Toronto & GTA based</div>
+        <div class="trait"><span class="trait-dot"></span>Photo + Video</div>
+        <div class="trait"><span class="trait-dot"></span>Fast turnaround</div>
+      </div>
+
+      <a href="#contact" class="btn-primary about-cta">Work With Us</a>
+    </div>
+
+  </div>
+</section>
+<!-- ================= End About Section ================= -->
+
+ 
+<script src="script.js"></script>
+</body>
+</html>
