@@ -1440,3 +1440,38 @@ textarea {
     align-self: flex-end;
   }
 }
+
+.form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 48px 24px;
+  border: 1px solid rgba(224, 74, 47, 0.3);
+  border-radius: 4px;
+  background: rgba(224, 74, 47, 0.05);
+  margin-top: 8px;
+}
+
+.form-success.show {
+  display: flex;
+}
+
+.form-success svg {
+  width: 52px;
+  height: 52px;
+  color: var(--orange);
+}
+
+.form-success p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.form-submit {
+  width: auto;
+  align-self: flex-start;
+}
