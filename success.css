@@ -1,0 +1,36 @@
+.success-page {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 420px;
+}
+
+.success-box svg {
+  width: 64px;
+  height: 64px;
+  color: var(--orange);
+}
+
+.success-box h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--white);
+  letter-spacing: 0.05em;
+}
+
+.success-box p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
