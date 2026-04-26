@@ -92,3 +92,25 @@ const traitObserver = new IntersectionObserver((entries) => {
 });
 
 aboutTraits.forEach(el => traitObserver.observe(el));
+
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const data = new FormData(contactForm);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    contactForm.querySelectorAll('.form-row, .form-group, .form-submit').forEach(el => {
+      el.style.display = 'none';
+    });
+    document.getElementById('formSuccess').classList.add('show');
+  })
+  .catch(() => {
+    alert('Something went wrong. Please try again.');
+  });
+});
