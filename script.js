@@ -1,71 +1,94 @@
-  // Navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  });
+// ================= NAVBAR SCROLL EFFECT =================
+const navbar = document.getElementById('navbar');
 
-  // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
 
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  }
+// ================= HAMBURGER MENU =================
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  // Portfolio filter
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const gridItems  = document.querySelectorAll('.grid-item');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+// close mobile menu when clicking links
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
 
-      const filter = btn.dataset.filter;
 
-      gridItems.forEach(item => {
-        const match = filter === 'all' || item.dataset.category === filter;
+// ================= PORTFOLIO FILTER =================
+const filterBtns = document.querySelectorAll('.filter-btn');
+const gridItems = document.querySelectorAll('.grid-item');
 
-        item.style.opacity = match ? '1' : '0';
-        item.style.transform = match ? 'scale(1)' : 'scale(0.95)';
-        item.style.pointerEvents = match ? 'auto' : 'none';
-      });
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    gridItems.forEach(item => {
+      const match = filter === 'all' || item.dataset.category === filter;
+
+      item.style.opacity = match ? '1' : '0';
+      item.style.transform = match ? 'scale(1)' : 'scale(0.95)';
+      item.style.pointerEvents = match ? 'auto' : 'none';
     });
+
   });
+});
 
-  // Scroll reveal animation
-  const revealEls = document.querySelectorAll('.grid-item, .service-card, .section-header');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+// ================= SCROLL REVEAL (FIXED + COMPLETE) =================
+const revealEls = document.querySelectorAll(`
+  .grid-item,
+  .service-card,
+  .package-card,
+  .section-header,
+  .packages-note,
+  .about-image-wrap,
+  .about-content,
+  .trait,
+  .contact-left,
+  .contact-right
+`);
 
-  revealEls.forEach(el => observer.observe(el));
-
-  // Reveal About section + traits on scroll
-const aboutElements = document.querySelectorAll(
-  '.about-image-wrap, .about-content, .trait'
-);
-
-const aboutObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.15
+  threshold: 0.12
 });
 
-aboutElements.forEach(el => aboutObserver.observe(el));
+revealEls.forEach(el => observer.observe(el));
+
+
+// ================= ABOUT TRAITS STAGGER =================
+const aboutTraits = document.querySelectorAll('.trait');
+
+const traitObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 120);
+
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+aboutTraits.forEach(el => traitObserver.observe(el));
